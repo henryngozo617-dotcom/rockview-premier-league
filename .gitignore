@@ -1,0 +1,30 @@
+# =========================================================
+# ROCKVIEW PREMIER LEAGUE
+# Git Ignore
+# =========================================================
+
+# Database credentials
+db.php
+
+# Local/server configuration
+.env
+.env.*
+
+# XAMPP / local server files
+xampp/
+.htaccess.local
+
+# Backup files
+*_backup.php
+*_backup.js
+*.bak
+*.tmp
+
+# Editor / operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

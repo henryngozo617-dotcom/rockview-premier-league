@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RPL | Rockview Premier League Ndola Campus</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    ⚽
+                </div>
+
+                <div class="brand-text">
+                    <h1>RPL</h1>
+                    <span>ROCKVIEW PREMIER LEAGUE NDOLA CAMPUS</span>
+                </div>
+
+            </div>
+
+
+            <nav class="main-nav">
+
+               <a href="#" class="active">⌂ HOME</a>
+
+<a href="#match-centre">
+    ⚽ MATCH CENTRE
+</a>
+
+<a href="#matches">
+    🔴 LIVE
+</a>
+
+<a href="#news">
+    ⚑ NEWS
+</a>
+
+<a href="#archive">
+    ▣ ARCHIVE
+</a>
+
+<a href="#competitions">
+    🏆 COMPETITIONS
+</a>
+
+<a href="#teams">
+    🛡️ TEAMS
+</a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+    <button
+        class="theme-btn"
+        type="button"
+        aria-label="Toggle dark mode"
+    >
+        ☾
+    </button>
+
+    <a
+        href="register.php"
+        class="register-btn"
+    >
+        REGISTER
+    </a>
+
+    <a
+        href="login.php"
+        class="login-btn"
+    >
+        LOGIN
+    </a>
+
+</div>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <div class="competition-label">
+                ⚽ OFFICIAL UNIVERSITY FOOTBALL
+            </div>
+
+            <h2>
+                ROCKVIEW
+                <span>PREMIER LEAGUE NDOLA CAMPUS</span>
+            </h2>
+
+            <p>
+                The official competition management platform
+                for Rockview University Ndola Campus.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#matches" class="primary-btn">
+                    MATCH CENTRE
+                </a>
+
+                <a href="#teams" class="secondary-btn">
+                    VIEW TEAMS
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= QUICK STATS ================= -->
+
+    
+<section class="quick-stats">
+
+    <div class="stat">
+
+        <span class="stat-icon">🏆</span>
+
+        <div>
+            <strong id="teamCount">0</strong>
+            <small>TEAMS</small>
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <span class="stat-icon">⚽</span>
+
+        <div>
+            <strong id="matchCount">0</strong>
+            <small>MATCHES PLAYED</small>
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <span class="stat-icon">👥</span>
+
+        <div>
+            <strong id="playerCount">0</strong>
+            <small>REGISTERED PLAYERS</small>
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <span class="stat-icon">🔥</span>
+
+        <div>
+            <strong id="goalCount">0</strong>
+            <small>GOALS</small>
+        </div>
+
+    </div>
+
+</section>
+```
+
+
+
+
+       <!-- ================= MATCH CENTRE ================= -->
+
+<section id="match-centre" class="match-centre">
+
+    <div class="section-top">
+
+        <div>
+
+            <span class="section-label">
+                MATCH CENTRE
+            </span>
+
+            <div id="liveMatches"></div>
+
+<div id="finishedMatches"></div>
+
+<div id="upcomingMatches"></div>
+
+<div id="matchDetails" class="match-details" style="display: none;"></div>
+
+            <h2>
+                RPL MATCHES
+            </h2>
+
+        </div>
+
+        <div class="competition-selector">
+
+            <select>
+                <option>Rockview Premier League</option>
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- MATCH TABS -->
+
+    <div class="match-tabs">
+
+        <button class="tab active" data-tab="live">
+
+            LIVE
+
+            <span id="liveCount">
+                0
+            </span>
+
+        </button>
+
+
+        <button class="tab" data-tab="finished">
+
+            FINISHED
+
+            <span id="finishedCount">
+                0
+            </span>
+
+        </button>
+
+
+        <button class="tab" data-tab="upcoming">
+
+            UPCOMING
+
+            <span id="upcomingCount">
+                0
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- LIVE MATCHES -->
+
+    <div
+        id="liveMatches"
+        class="match-list"
+    >
+
+        <div class="match-empty">
+
+            <div class="empty-icon">
+                🔴
+            </div>
+
+            <h3>
+                No Live Matches
+            </h3>
+
+            <p>
+                There are currently no live RPL matches.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINISHED MATCHES -->
+
+    <div
+        id="finishedMatches"
+        class="match-list"
+        style="display: none;"
+    >
+
+        <div class="match-empty">
+
+            <div class="empty-icon">
+                🏁
+            </div>
+
+            <h3>
+                No Finished Matches
+            </h3>
+
+            <p>
+                Completed RPL results will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- UPCOMING MATCHES -->
+
+    <div
+        id="upcomingMatches"
+        class="match-list"
+        style="display: none;"
+    >
+
+        <div class="match-empty">
+
+            <div class="empty-icon">
+                📅
+            </div>
+
+            <h3>
+                No Upcoming Matches
+            </h3>
+
+            <p>
+                Upcoming RPL fixtures will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- ================= LEAGUE TABLE ================= -->
+
+<section class="content-grid">
+
+    <div class="panel" id="competitions">
+
+        <div class="panel-header">
+
+            <div>
+                <span class="section-label">
+                    COMPETITION
+                </span>
+
+                <h2>
+                    LEAGUE TABLE
+                </h2>
+            </div>
+
+            <a href="#">
+                VIEW ALL →
+            </a>
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>TEAM</th>
+                        <th>P</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>GD</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+
+                <tbody id="standingsBody">
+
+                    <tr>
+                        <td colspan="8">
+                            Loading league table...
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- ================= TOP SCORERS ================= -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            STATISTICS
+                        </span>
+
+                        <h2>
+                            TOP SCORERS
+                        </h2>
+
+                    </div>
+
+                    <a href="#">
+                        VIEW ALL →
+                    </a>
+
+                </div>
+
+
+               <div class="scorers-table-wrapper">
+
+    <table class="scorers-table">
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>PLAYER</th>
+                <th>TEAM</th>
+                <th>GOALS</th>
+            </tr>
+        </thead>
+
+        <tbody id="topScorersBody">
+
+            <tr>
+                <td colspan="4">
+                    Loading top scorers...
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
+      <section id="teams" class="teams-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            RPL COMPETITION
+        </span>
+
+        <h2>
+            PARTICIPATING TEAMS
+        </h2>
+
+        <p>
+            The eight teams competing in the
+            Rockview Premier League.
+        </p>
+
+    </div>
+
+
+    <div class="teams-grid">
+
+        <!-- ZAMBEZI FC -->
+        <div class="team-card team-clickable"
+             onclick="openTeamProfile(1)">
+
+            <div class="team-logo-image">
+                <img src="images/teams/zambezi-fc.png"
+                     alt="Zambezi FC">
+            </div>
+
+            <h3>Zambezi FC</h3>
+            <span>ZFC</span>
+
+            <button class="team-view-btn" onclick="openTeamProfile(1)">
+    VIEW TEAM →
+</button>
+
+        </div>
+
+
+        <!-- REAL KAFUE -->
+        <div class="team-card team-clickable"
+             onclick="openTeamProfile(2)">
+
+            <div class="team-logo-image">
+                <img src="images/teams/real-kafue.png"
+                     alt="Real Kafue">
+            </div>
+
+            <h3>Real Kafue</h3>
+            <span>RK</span>
+
+            <button class="team-view-btn">
+                VIEW TEAM →
+            </button>
+
+        </div>
+
+
+        <!-- BOARDER CITY -->
+        <div class="team-card team-clickable"
+             onclick="openTeamProfile(3)">
+
+            <div class="team-logo-image">
+                <img src="images/teams/boarder-city.png"
+                     alt="Boarder City">
+            </div>
+
+            <h3>Boarder City</h3>
+            <span>BC</span>
+
+            <button class="team-view-btn">
+                VIEW TEAM →
+            </button>
+
+        </div>
+
+
+        <!-- GALAXY FC -->
+        <div class="team-card team-clickable"
+             onclick="openTeamProfile(4)">
+
+            <div class="team-logo-image">
+                <img src="images/teams/galaxy-fc.png"
+                     alt="Galaxy FC">
+            </div>
+
+            <h3>Galaxy FC</h3>
+            <span>GFC</span>
+
+            <button class="team-view-btn">
+                VIEW TEAM →
+            </button>
+
+        </div>
+
+
+        <!-- NGOMBE BULLS FC -->
+        <div class="team-card team-clickable"
+             onclick="openTeamProfile(5)">
+
+            <div class="team-logo-image">
+                <img src="images/teams/ngombe-bulls-fc.png"
+                     alt="Ngombe Bulls FC">
+            </div>
+
+            <h3>Ngombe Bulls FC</h3>
+            <span>NBF</span>
+
+            <button class="team-view-btn">
+                VIEW TEAM →
+            </button>
+
+        </div>
+
+
+        <!-- HUNGRY LIONS -->
+        <div class="team-card team-clickable"
+             onclick="openTeamProfile(6)">
+
+            <div class="team-logo-image">
+                <img src="images/teams/hungry-lions.png"
+                     alt="Hungry Lions">
+            </div>
+
+            <h3>Hungry Lions</h3>
+            <span>HL</span>
+
+            <button class="team-view-btn">
+                VIEW TEAM →
+            </button>
+
+        </div>
+
+
+        <!-- G-DONAIS -->
+        <div class="team-card team-clickable"
+             onclick="openTeamProfile(7)">
+
+            <div class="team-logo-image">
+                <img src="images/teams/g-donais.png"
+                     alt="G-Donais">
+            </div>
+
+            <h3>G-Donais</h3>
+            <span>GD</span>
+
+            <button class="team-view-btn">
+                VIEW TEAM →
+            </button>
+
+        </div>
+
+
+        <!-- MULINDI UNITED -->
+        <div class="team-card team-clickable"
+             onclick="openTeamProfile(8)">
+
+            <div class="team-logo-image">
+                <img src="images/teams/mulindi-united.png"
+                     alt="Mulindi United">
+            </div>
+
+            <h3>Mulindi United</h3>
+            <span>MU</span>
+
+            <button class="team-view-btn">
+                VIEW TEAM →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TEAM PROFILE PANEL -->
+    <div id="teamProfile" class="team-profile-panel">
+
+        <div class="team-profile-content">
+
+            <button class="team-profile-close"
+                    onclick="closeTeamProfile()">
+                ✕
+            </button>
+
+            <div id="teamProfileBody">
+
+                <!-- Team information will load here -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- ================= PLAYERS ================= -->
+
+        <section id="players" class="players-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    PLAYER DATABASE
+                </span>
+
+                <h2>
+                    RPL PLAYERS
+                </h2>
+
+                <p>
+                    Registered players competing in the
+                    Rockview Premier League.
+                </p>
+
+            </div>
+
+
+            <!-- PLAYER SEARCH -->
+
+<div class="player-search-wrapper">
+
+    <div class="player-search-box">
+
+        <span class="player-search-icon">🔎</span>
+
+        <input
+            type="text"
+            id="playerSearch"
+            placeholder="Search player, team, position, jersey or registration..."
+            autocomplete="off"
+        >
+
+        <button
+            type="button"
+            id="clearPlayerSearch"
+            class="clear-player-search"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <div
+        id="playerSearchInfo"
+        class="player-search-info"
+    >
+        Showing all registered players
+    </div>
+
+</div>
+
+            <div id="playersGrid" class="players-grid">
+
+                <div class="empty-state">
+
+                    <h3>
+                        Loading Players...
+                    </h3>
+
+                    <p>
+                        Player information is being loaded
+                        from the RPL database.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+     PLAYER PROFILE PANEL
+     ===================================================== -->
+
+<div id="playerProfile" class="player-profile-panel">
+
+    <div class="player-profile-content">
+
+        <button
+            class="player-profile-close"
+            onclick="closePlayerProfile()"
+        >
+            ✕
+        </button>
+
+        <div id="playerProfileBody">
+
+            <!-- Player profile loads here -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+            <!-- ================= NEWS ================= -->
+
+<section id="news" class="news-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            RPL UPDATES
+        </span>
+
+        <h2>
+            LATEST NEWS
+        </h2>
+
+        <p class="news-intro">
+            Official Rockview Premier League news, announcements
+            and competition updates.
+        </p>
+
+    </div>
+
+
+    <!-- NEWS FROM DATABASE -->
+
+    <div id="newsContainer" class="news-container">
+
+        <div class="news-loading">
+
+            <div class="news-loading-spinner"></div>
+
+            <p>
+                Loading RPL updates...
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    ⚽
+                </div>
+
+                <div>
+
+                    <h2>
+                        ROCKVIEW PREMIER LEAGUE
+                    </h2>
+
+                    <p>
+                        Official football competition platform
+                        for Rockview University Ndola Campus.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>QUICK LINKS</h3>
+
+                <a href="#">Home</a>
+                <a href="#matches">Match Centre</a>
+                <a href="#teams">Teams</a>
+                <a href="#news">News</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>COMPETITION</h3>
+
+                <a href="#">League Table</a>
+                <a href="#">Fixtures</a>
+                <a href="#">Results</a>
+                <a href="#">Top Scorers</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>PLAYER SERVICES</h3>
+
+                <a href="#">Player Registration</a>
+                <a href="#">Verify Player</a>
+                <a href="#">Player Search</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <!-- =========================================================
+     OUTFIELD PLAYER STATISTICS
+     ========================================================= -->
+
+<section
+    id="player-statistics"
+    class="player-statistics-section"
+>
+
+    <div class="section-top">
+
+        <div>
+
+            <span class="section-label">
+                PLAYER STATISTICS
+            </span>
+
+            <h2>
+                ⚽ RPL PLAYER STATISTICS
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="table-wrapper">
+
+        <table class="stats-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+                    <th>PLAYER</th>
+                    <th>TEAM</th>
+                    <th>APPS</th>
+                    <th>GOALS</th>
+                    <th>MINUTES</th>
+                    <th>🟨</th>
+                    <th>🟥</th>
+                    <th>RATING</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="playerStatisticsBody">
+
+                <tr>
+                    <td colspan="9">
+                        Loading player statistics...
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+  <!-- =========================================================
+     GOALKEEPER STATISTICS
+     ========================================================= -->
+
+<section
+    id="goalkeepers"
+    class="goalkeepers-section"
+>
+
+    <div class="section-top">
+
+        <div>
+
+            <span class="section-label">
+                PLAYER STATISTICS
+            </span>
+
+            <h2>
+                🧤 RPL GOALKEEPER STATISTICS
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-wrapper">
+
+        <table class="stats-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>GOALKEEPER</th>
+
+                    <th>TEAM</th>
+
+                    <th>APPS</th>
+
+                    <th>MINUTES</th>
+
+                    <th>SAVES</th>
+
+                    <th>SAVE %</th>
+
+                    <th>CLEAN SHEETS</th>
+
+                    <th>GOALS CONCEDED</th>
+
+                    <th>GOALS PREVENTED</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="goalkeepersBody">
+
+                <tr>
+
+                    <td colspan="10">
+                        Loading goalkeeper statistics...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <h2>
+                ⚽ RPL
+            </h2>
+
+            <p>
+                Rockview Premier League
+            </p>
+
+            <p>
+                Official football competition platform
+                for Rockview University Ndola Campus.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div>
+
+                <h3>
+                    QUICK LINKS
+                </h3>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#matches">
+                    Match Centre
+                </a>
+
+                <a href="#teams">
+                    Teams
+                </a>
+
+                <a href="#news">
+                    News
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    COMPETITION
+                </h3>
+
+                <a href="#standings">
+                    League Table
+                </a>
+
+                <a href="#matches">
+                    Fixtures
+                </a>
+
+                <a href="#matches">
+                    Results
+                </a>
+
+                <a href="#players">
+                    Top Scorers
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    PLAYER SERVICES
+                </h3>
+
+                <a href="#players">
+                    Player Registration
+                </a>
+
+                <a href="#players">
+                    Verify Player
+                </a>
+
+                <a href="#players">
+                    Player Search
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Rockview Premier League.
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
